@@ -37,6 +37,7 @@ Good resources for being prepared to take the exam:
 * Atharva Chauthaiwale on Medium, "[My CKAD Exam Experience](https://medium.com/@atharvac.cloud/my-ckad-exam-experience-5e10c3640273)"
 * GitHub [dgkanatsios/CKAD-exercises](https://github.com/dgkanatsios/CKAD-exercises)
 * GitHub [lucassha/CKAD-resources](https://github.com/lucassha/CKAD-resources)
+* GitHub [nikhilagrawal577/ckad-notes](https://github.com/nikhilagrawal577/ckad-notes)
 
 ## Additional K8s References and Training
 
