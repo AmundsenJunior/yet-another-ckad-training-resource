@@ -5,16 +5,27 @@
 ## YAML Manifests
 
 All k8s definition files have four required sections:
-* apiVersion
-* kind
-* metadata
-* spec
+* `apiVersion`
+* `kind`
+* `metadata`
+* `spec` (or sometimes `data`)
 
 ## Environment Setup
 
 Setup kubectl alias:
 ```sh
 $ alias kc=kubectl
+```
+
+Configure Vim for YAML files:
+```sh
+$ echo 'autocmd Filetype yaml setlocal ts=2 sts=2 sw=2 expandtab autoindent' > ~/.vimrc
+```
+
+Open a tmux session with two panes:
+```sh
+$ tmux
+Ctrl+b %
 ```
 
 ## 10. Pod
