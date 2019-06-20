@@ -1,4 +1,5 @@
-# ckad-training-resources
+# yet-another-ckad-training-resource
+The acronym is YACTR and it's pronounced yachter. **YACHTER**, y'all. Kept true to  the k8s nautical theme by sheer luck :satisfied:.
 
 *Guides, links, commands, and YAMLs to help prepare for the Certified Kubernetes Application Developer (CKAD) exam*
 
