@@ -193,7 +193,7 @@ spec:
     runAsUser: 1001
 ```
 
-Set user and capabilities at container level:
+Set user and capabilities at container level (this will override pod-level `securityContext`):
 ```yaml
 spec:
   containers:
@@ -207,6 +207,8 @@ spec:
 
 ## 41. ServiceAccount
 
+*(Note: RBAC is also needed to apply appropriate permissions to a service account, but that will be covered later.)*
+
 Get list of service accounts:
 ```sh
 $ kc get sa
@@ -216,7 +218,6 @@ Create a service account:
 ```sh
 $ kc create sa sa-name
 ```
-*(Note: RBAC is also needed to apply appropriate permissions to account, but that will be covered later.)*
 
 Add a service account to a pod or deployment:
 ```yaml
