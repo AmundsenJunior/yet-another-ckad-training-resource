@@ -42,7 +42,7 @@ $ kc run nginx --image=nginx --dry-run -o yaml
 
 Get pod info:
 ```sh
-$ kc describe po nginx-pod:
+$ kc describe po nginx-pod
 ```
 
 Get more details of pods:
@@ -130,7 +130,7 @@ $ vim webapp-service.yaml
 $ kc create -f webapp-service.yaml
 ```
 
-## 25. Namespace 
+## 26. Namespace 
 
 View all resources that exist in namespace of current context:
 ```sh
@@ -143,7 +143,7 @@ $ kc config set-context $(kubectl config current-context) --namespace=elastic-st
 $ kc config view | grep namespace
 ```
 
-## 33. ConfigMap
+## 35. ConfigMap
 
 Create a configmap imperatively with literal values:
 ```sh
@@ -175,7 +175,7 @@ spec:
         name: configmap-name
 ```
 
-## 35. Secret
+## 37. Secret
 
 To create a secret file, encode values in base64:
 ```sh
@@ -195,7 +195,7 @@ spec:
         name: secret-name
 ```
 
-## 39. securityContext
+## 41. securityContext
 
 Set user at pod-level (if not set in container-level):
 ```yaml
@@ -216,7 +216,7 @@ spec:
             - "MAC_ADMIN"
 ```
 
-## 41. ServiceAccount
+## 43. ServiceAccount
 
 *(Note: RBAC is also needed to apply appropriate permissions to a service account, but that will be covered later.)*
 
@@ -236,7 +236,7 @@ spec:
   serviceAccount: sa-name
 ```
 
-## 44. Resource Requirements
+## 46. Resource Requirements
 
 ### resources.requests
 
@@ -270,7 +270,7 @@ spec:
         cpu: 2
 ```
 
-## 46. Taints and Tolerations
+## 48. Taints and Tolerations
 
 Taint nodes to prevent intolerant pods from being scheduled on those nodes.
 * `taint-effect` can be one of:
@@ -298,7 +298,7 @@ Remove a taint from a node by key (and effect):
 $ kc taint no node-name instanceType:PreferNoSchedule-
 ```
 
-## 48. nodeSelector 
+## 50. nodeSelector 
 
 Label nodes for node selectors:
 ```sh
@@ -312,7 +312,7 @@ spec:
     memSize: Large
 ```
 
-## 49. nodeAffinity
+## 51. nodeAffinity
 
 Use `nodeAffinity` to get specific on pod-to-node scheduling preferences:
 * `nodeAffinity` types available/planned:
@@ -341,4 +341,80 @@ spec:
             values:
             - Small
 ```
+
+## 56. Multi-Container Pods
+
+Three types of multi-container pod patterns that take advantage of shared context (`localhost` on the network to one another, automatically shared `volumes`):
+* _sidecar_: executes auxilliary operations to the main app container (e.g., logging agent)
+* _adapter_: executes local context-specific operations (e.g., logging parser/transformer to standard format, pre-sidecar)
+* _ambassador_: provides local proxy to environment-specific resources (e.g., remove need for configuration of environment-specific database URL)
+
+## 58. Readiness Probes
+
+Test for true container readiness to receive traffic and signal to Kubernetes when a container reaches this condition. 
+
+Each container in a pod can be configured with its own readiness probe, and the pod is not in a ready state until all containers are ready. Different types of probes are available for configuration:
+* hitting an HTTP endpoint (`httpGet`)
+* checking for a listening TCP port (`tcpSocket`)
+* executing a custom script that exits 0 on success (`exec: command: - command - argument`)
+
+```yaml
+spec:
+  containers:
+  - name: app
+    readinessProbe:
+      httpGet:
+        path: /api/ready
+        port: 8080
+      initialDelaySeconds: 10
+      periodSeconds: 5
+      failureThreshold: 8
+```
+
+## 59. Liveness Probes
+
+On a running container, maintain status of a validly running application by configuring liveness probes (`livenessProbe`) to regularly check a container's status. Configuration options are the same as `readinessProbe`.
+
+## 61. Container Logging
+
+View live running pod logs:
+```sh
+$ kc logs -f pod-name
+```
+
+In a multi-container pod, logs can only be shown from one container, and must be specified:
+```sh
+$ kc logs -f pod-name container-name
+```
+
+## 63. Cluster Monitoring
+
+Open-source cluster monitoring solutions such as Prometheus and Elastic stack are covered in the CKA exam.
+
+CKAD only requires awareness of [Metrics Server](https://github.com/kubernetes-incubator/metrics-server), an in-memory-only slim replacement for Heapster that provides node- and pod-level metrics.
+
+Metrics Server reads node and pod metrics by querying the `kubelet` API on each node, which in turn uses `cAdvisor` to provide pod/container metrics for resources each node is running.
+
+To enable metrics-server on Minikube:
+```sh
+$ minikube addons enable metrics-server
+```
+
+To deploy metrics-server to any other cluster:
+```sh
+$ git clone https://github.com/kubernetes-incubator/metrics-server.git
+$ cd metrics-server
+$ kc create -f deploy/1.8+/ # create command can take a directory of YAML files as an argument
+```
+
+Inspect the resource usage of each node:
+```sh
+$ kc top node
+```
+
+Inspect the resource usage of each pod:
+```sh
+$ kc top pod
+```
+
 
