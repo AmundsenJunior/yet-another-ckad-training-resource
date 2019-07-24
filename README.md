@@ -38,6 +38,8 @@ Good resources for being prepared to take the exam:
 * GitHub [dgkanatsios/CKAD-exercises](https://github.com/dgkanatsios/CKAD-exercises)
 * GitHub [lucassha/CKAD-resources](https://github.com/lucassha/CKAD-resources)
 * GitHub [nikhilagrawal577/ckad-notes](https://github.com/nikhilagrawal577/ckad-notes)
+* Matthew Palmer, "[CKAD Exam Guide](https://matthewpalmer.net/kubernetes-app-developer/articles/ckad-exam-guide.html)"
+* David Nguyen, "[A Few Tips to Prepare for Your CKAD Exam](https://pnguyen.io/posts/ckad-tips/)"
 
 ## Additional K8s References and Training
 
@@ -50,6 +52,7 @@ Other training and review resources for k8s encountered (not CKAD-specific):
 * [IBM Kubernetes 101](https://github.com/IBM/kube101)
 * [Kubernetes the Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way), if you need to understand k8s under the hood, or want to get a jump-start on prepping for the Certified Kubernetes Administrator (CKA) exam
 * *[Kubernetes Up and Running](http://shop.oreilly.com/product/0636920043874.do)* a comprehensive k8s development book from the k8s creators
+* [The Kubernetes Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 
 ## How to YAML
 
