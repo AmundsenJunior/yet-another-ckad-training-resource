@@ -8,7 +8,7 @@ The acronym is YACTR and it's pronounced yachter. **YACHTER**, y'all. Kept true 
 * [Kubernetes Docs](https://kubernetes.io/docs/home/)
 * Linux Foundation, [The CKAD Exam](https://training.linuxfoundation.org/certification/certified-kubernetes-application-developer-ckad/)
 * Cloud Native Computing Foundation, [The CKAD Exam](https://www.cncf.io/certification/ckad/)
-  * [Exam Curriculum](https://github.com/cncf/curriculum/blob/master/CKAD_Curriculum_V1.14.1.pdf)
+  * [Exam Curriculum](https://github.com/cncf/curriculum)
   * [Candidate Handbook](https://training.linuxfoundation.org/go/cka-ckad-candidate-handbook)
   * [Exam Tips](http://training.linuxfoundation.org/go//Important-Tips-CKA-CKAD)
   * [Exam FAQ](http://training.linuxfoundation.org/go/cka-ckad-faq)
