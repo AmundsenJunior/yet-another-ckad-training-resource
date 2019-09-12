@@ -70,6 +70,7 @@ Working solely in a terminal during the exam, here are resources to learn how to
 ## How to tmux
 
 According to the CKAD Candidate Handbook from CNCF (see link above), `tmux` and `screen` are allowed to provide multiple panes in your terminal window.
-* Hackernoon, "[A Gentle Introduction to tmux](https://hackernoon.com/a-gentle-introduction-to-tmux-8d784c404340)"
+* Alek Shnayder on Hackernoon, "[A Gentle Introduction to tmux](https://medium.com/hackernoon/a-gentle-introduction-to-tmux-8d784c404340)"
 * Peter Jang on Medium, "[A Minimalist Guide to tmux](https://medium.com/actualize-network/a-minimalist-guide-to-tmux-13675fb160fa)"
 * Ham Vocke, "[A Quick and Easy Guide to tmux](https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/)"
+* Josh Clayton on ThoughtBot, "[A tmux Crash Course](https://thoughtbot.com/blog/a-tmux-crash-course)"
