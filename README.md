@@ -40,6 +40,7 @@ Good resources for being prepared to take the exam:
 * GitHub [nikhilagrawal577/ckad-notes](https://github.com/nikhilagrawal577/ckad-notes)
 * Matthew Palmer, "[CKAD Exam Guide](https://matthewpalmer.net/kubernetes-app-developer/articles/ckad-exam-guide.html)"
 * David Nguyen, "[A Few Tips to Prepare for Your CKAD Exam](https://pnguyen.io/posts/ckad-tips/)"
+* Katie Gamanji on Medium, "[How I Passed My CKAD with 97%](https://medium.com/@kgamanji/how-i-passed-my-ckad-with-97-6b54dcffa72f)"
 
 ## Additional K8s References and Training
 
